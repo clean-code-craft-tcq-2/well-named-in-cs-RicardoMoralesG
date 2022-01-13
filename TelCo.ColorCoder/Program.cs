@@ -46,9 +46,11 @@ namespace TelCo.ColorCoder
             pairNumber = PairNumberColor.GetPairNumberFromColor(testPair2);
             Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}", testPair2, pairNumber);
             Debug.Assert(pairNumber == 6);
-            
+
             //Print Table Colors Reference
-            PrinColorPair.ShowDataColors(26);
+            int TotalPairs = ColorValues.colorMapMajor.Length * ColorValues.colorMapMinor.Length;
+            int PairsToPrint = PrinColorPair.ShowDataColors(TotalPairs);
+            Debug.Assert(PairsToPrint == TotalPairs);
             
         }
     }
